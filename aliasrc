@@ -1,0 +1,15 @@
+#!/usr/bin/sh
+
+alias ls="ls -hN --color=auto --group-directories-first"
+alias l="ls -ahls --color=auto"
+alias rm="rm -v"
+alias mv="mv -v"
+alias cp="cp -v"
+alias vi="vim"
+alias c='printf "\e[H\e[2J"'
+alias clear='printf "\e[H\e[2J"'
+alias '?'="duck"
+alias '??'="bing"
+alias '???'="google"
+alias 'xc'="xclip -sel clip"
+alias download="curl -sSLOfk"
