@@ -156,5 +156,5 @@ git clone https://github.com/DeadS3c/Kali.git
 cd Kali
 # Give permissions and execute the setup.sh script
 chmod u+x setup.sh && ./setup.sh
-# Enter the password when need it, wait and enjoy
+# Enter the password when need it, wait until reboot
 ```
