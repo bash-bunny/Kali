@@ -1,6 +1,6 @@
 # OVERVIEW
 
-Personal configuration for a fresh Kali Linux install
+Personal configuration for a fresh Kali Linux install all based in vim keybindings
 
 # Configuration
 
@@ -21,6 +21,26 @@ Changing the default shell in Kali Linux
 ```bash
 chsh -s /usr/bin/bash
 ```
+
+#### Keybindings
+
+##### Edit mode
+
+- `Esc` - Exit edit mode and enter normal mode
+- `Alt+k` - Exit edit mode and go back in history
+- `Alt+j` - Exit edit mode and go forward in history
+
+##### Normal mode
+
+- `i` - Edit mode to write
+- `k` - Go back in history
+- `j` - Go forward in history
+- `w` - Jump between words
+- `/` - Search in history
+- `A` - Enter edit mode at the end of the line
+- `I` - Enter edit mode at the beggining of the line
+- `ct<letter>` - Change until that letter and enter edit mode
+- `C` - Change until the end of the line and enter edit mode
 
 ### Tmux
 
@@ -44,6 +64,10 @@ sudo apt install tmux
 - `Master+c` - Create a new panel
 - `Master+a` - Go between the last panel and the actual panel
 - `Master+&` - Kill actual panel
+- `Master+[` - Visual mode
+  - `Space` - In visual mode select text
+  - `Enter` - Copy the text selected and exit visual mode
+- `Master+]` - Paste the buffer
 
 ### Vim
 
@@ -77,6 +101,17 @@ sudo apt install lynx
 - `~/.config/lynx/lynx.cfg` - File with the configuration for lynx, all the keybindings, behavior, default browser to open, etc.
 - `~/.config/lynx/lynx.lss` - File with the look configuration for lynx
 - `~/.local/bin/lynx` - Wrapper for lynx to use our own configurations instead of the default one
+
+#### Keybindings
+
+- `q` - Exit lynx
+- `j` - Go down in every link in the web
+- `k` - Go up in every link in the web
+- `l` - Access the link
+- `h` - Go back in history
+- `i` - Information about the actual url
+- `,` - Open in the default browse the actual url
+- `/` - Search in the actual page
 
 ## Scripts
 
