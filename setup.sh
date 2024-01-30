@@ -25,7 +25,9 @@ cp lynx.cfg lynx.lss ~/.config/lynx/
 ## Copy alias
 cp aliasrc ~/.config/
 ## Copy scripts
-cp {lynx,bing,duck,google,vic,ix,urlencode,path} ~/.local/bin/
+cp {sharekeys,lynx,bing,duck,google,vic,ix,urlencode,path} ~/.local/bin/
+## Give them permissions
+chmod u+x ~/.local/bin/*
 
 # Change shell to bash
 chsh -s /usr/bin/bash
