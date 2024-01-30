@@ -69,7 +69,7 @@ sudo apt install tmux
 
 ## Vim
 
-Default text editor via terminal
+Default text editor via terminal, when it's acceded for the first time it would download the plugins if it's need it
 
 ### Installation
 
