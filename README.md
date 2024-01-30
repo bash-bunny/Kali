@@ -123,6 +123,7 @@ All the scripts that are on the PATH are stored in the folder `~/.local/bin/
 - `ix` - Script to share content using the web ix.io
 - `urlencode` - Script to encode the requests for the `duck`, `bing` and `google` scripts
 - `path` - Script to show the PATH in a pretty way
+- `sharekeys` - To share the keys you are pressing in the screen
 
 # Folders
 
