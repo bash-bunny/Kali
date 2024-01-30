@@ -54,7 +54,7 @@ Default text editor via terminal
 ```bash
 # Install vim
 sudo apt install vim
-# Instalar plugin manager
+# Install plugin manager
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
