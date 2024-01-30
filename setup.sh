@@ -18,7 +18,7 @@ if [[ -f ~/.local/bin ]]; then
 fi
 
 ## Cp the rest of the files to their location
-cp lynx.* ~/.config/lynx/
+cp lynx.cfg lynx.lss ~/.config/lynx/
 cp {lynx,bing,duck,google,vic,ix,urlencode,path} ~/.local/bin/
 
 # Change shell to bash
