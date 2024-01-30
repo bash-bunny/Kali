@@ -2,15 +2,13 @@
 
 Personal configuration for a fresh Kali Linux install all based in vim keybindings
 
-# Configuration
+# Terminal
 
-## Terminal
-
-### Bash
+## Bash
 
 I use bash as the default terminal instead of the zsh
 
-#### Configuration
+### Configuration
 
 - `~/.bashrc` - Default configuration file for bash with the vim mode on
 - `~/.inputrc` - File configuration the look of the input depending on the vi mode we are
@@ -22,15 +20,15 @@ Changing the default shell in Kali Linux
 chsh -s /usr/bin/bash
 ```
 
-#### Keybindings
+### Keybindings
 
-##### Edit mode
+#### Edit mode
 
 - `Esc` - Exit edit mode and enter normal mode
 - `Alt+k` - Exit edit mode and go back in history
 - `Alt+j` - Exit edit mode and go forward in history
 
-##### Normal mode
+#### Normal mode
 
 - `i` - Edit mode to write
 - `k` - Go back in history
@@ -42,21 +40,21 @@ chsh -s /usr/bin/bash
 - `ct<letter>` - Change until that letter and enter edit mode
 - `C` - Change until the end of the line and enter edit mode
 
-### Tmux
+## Tmux
 
 Terminal multiplexor that allows to be scripted and it's very flexible
 
-#### Installation
+### Installation
 
 ```bash
 sudo apt install tmux
 ```
 
-#### Configuration
+### Configuration
 
 - `~/.tmux.conf` - Default file with the configuration for tmux with the default keybindings changed
 
-#### Keybindings
+### Keybindings
 
 - `Ctrl+A` - Master combination to start introducing commands
 - `Master+-` - Split horizontally
@@ -69,11 +67,11 @@ sudo apt install tmux
   - `Enter` - Copy the text selected and exit visual mode
 - `Master+]` - Paste the buffer
 
-### Vim
+## Vim
 
 Default text editor via terminal
 
-#### Installation
+### Installation
 
 ```bash
 # Install vim
@@ -82,27 +80,27 @@ sudo apt install vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-#### Configuration
+### Configuration
 
 - `~/.vimrc` - Default file with all the configuration and look for the vim editor
 
-### Lynx
+## Lynx
 
 Web browser via terminal, that allows you to search and navigate the WWW with only a terminal
 
-#### Installation
+### Installation
 
 ```bash
 sudo apt install lynx
 ```
 
-#### Configuration
+### Configuration
 
 - `~/.config/lynx/lynx.cfg` - File with the configuration for lynx, all the keybindings, behavior, default browser to open, etc.
 - `~/.config/lynx/lynx.lss` - File with the look configuration for lynx
 - `~/.local/bin/lynx` - Wrapper for lynx to use our own configurations instead of the default one
 
-#### Keybindings
+### Keybindings
 
 - `q` - Exit lynx
 - `j` - Go down in every link in the web
@@ -113,7 +111,7 @@ sudo apt install lynx
 - `,` - Open in the default browse the actual url
 - `/` - Search in the actual page
 
-## Scripts
+# Scripts
 
 All the scripts that are on the PATH are stored in the folder `~/.local/bin/
 
@@ -126,12 +124,12 @@ All the scripts that are on the PATH are stored in the folder `~/.local/bin/
 - `urlencode` - Script to encode the requests for the `duck`, `bing` and `google` scripts
 - `path` - Script to show the PATH in a pretty way
 
-## Folders
+# Folders
 
 - `~/.local/bin` - Folder to store all the scripts for our user
 - `~/.config/` - Personal configuration folder for our user
 
-## Alias
+# Alias
 
 All the alias for our terminal are created on the file `~/.config/aliasrc`
 
