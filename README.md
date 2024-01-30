@@ -133,7 +133,7 @@ All the scripts that are on the PATH are stored in the folder `~/.local/bin/
 
 All the alias for our terminal are created on the file `~/.config/aliasrc`
 
-- `l` - Show hidden folders with the directories first
+- `l` - ls showing hidden folders with the directories first
 - `ls` - Pretty ls
 - `?` - Execute the script `duck` searching for what we put after
 - `??` - Execute the script `bing` searching for what we put after
