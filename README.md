@@ -142,3 +142,19 @@ All the alias for our terminal are created on the file `~/.config/aliasrc`
 - `download` - Execute `curl -sSLOfk` to download any file from the web
 - `xc` - Copy the content from the terminal
 - `c` - Clear the terminal
+
+# Installation
+
+**Beware**: This would change your configuration for the default user
+
+```bash
+# Change directory to a temporary one
+cd /tmp
+# Download the repo
+git clone https://github.com/DeadS3c/Kali.git
+# Change into the repo directory
+cd Kali
+# Give permissions and execute the setup.sh script
+chmod u+x setup.sh && ./setup.sh
+# Enter the password when need it, wait and enjoy
+```
