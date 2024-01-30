@@ -1,6 +1,6 @@
 # OVERVIEW
 
-Personal configuration for a fresh Kali Linux install all based in vim keybindings
+Personal configuration for a fresh Kali Linux to make it more useful with vim keybindings for the terminal and nice scripts to search the internet without leaving it
 
 # Terminal
 
