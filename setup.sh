@@ -9,11 +9,11 @@ sudo apt install -y tmux vim lynx
 cp {.bashrc,.inputrc,.vimrc,.tmux.conf} ~/
 
 ## Create the folders if it doesn't exists
-if [[ -f ~/.config/lynx ]];then
+if [[ ! -d ~/.config/lynx ]];then
 	mkdir -p ~/.config/lynx
 fi
 
-if [[ -f ~/.local/bin ]]; then
+if [[ ! -d ~/.local/bin ]]; then
 	mkdir -p ~/.local/bin
 fi
 
