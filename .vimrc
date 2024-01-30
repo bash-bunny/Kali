@@ -225,6 +225,15 @@ nnoremap confr :source $HOME/.vimrc<CR>
 " Ruler format
 set ruf=%30(%=%#LineNr#%.50F\ [%{strlen(&ft)?&ft:'none'}]\ %l:%c\ %p%%%)
 
+" Plugins
+" """"""""""""""""""""""""""""""""""""""""""
+" Instalation
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " only load plugins if Plug detected
 if filereadable(expand("~/.vim/autoload/plug.vim"))
 
