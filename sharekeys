@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+screenkey -p fixed --persist -s small --font-size small --mods-mode tux --font-color orange --bg-color grey --opacity 0.0 -g 30%x5%+68%-86% &
