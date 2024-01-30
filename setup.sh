@@ -6,7 +6,7 @@
 sudo apt update && sudo apt upgrade -y
 
 ## Install all the programs need it
-sudo apt install -y tmux vim lynx
+sudo apt install -y tmux vim lynx screenkey
 
 ## Copy basic files for terminal to their location
 cp {.bashrc,.inputrc,.vimrc,.tmux.conf} ~/
