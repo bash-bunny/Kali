@@ -2,6 +2,12 @@
 
 Personal configuration for a fresh Kali Linux to make it more useful with vim keybindings for the terminal and nice scripts to search the internet without leaving it
 
+# Dependencies
+
+- vim - for editing files
+- tmux - for multiplexing the terminal
+- cowsay, figlet, lolcat - For the super fancy timer
+
 # Terminal
 
 ## Bash
