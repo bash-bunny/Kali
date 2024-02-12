@@ -1,6 +1,6 @@
 # OVERVIEW
 
-Personal configuration for a fresh Kali Linux to make it more useful with vim keybindings for the terminal and nice scripts to search the internet without leaving it. It has a DW directory to install some tools to access and investigate the dark web
+Personal configuration for a fresh Kali Linux to make it more useful with vim keybindings for the terminal and nice scripts to search the internet without leaving it. It has a DW directory to install some tools to investigate domains and access the Dark Web and other networks like freenet or zeronet
 
 # Dependencies
 
