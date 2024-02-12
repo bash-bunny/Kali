@@ -130,6 +130,7 @@ All the scripts that are on the PATH are stored in the folder `~/.local/bin/
 - `urlencode` - Script to encode the requests for the `duck`, `bing` and `google` scripts
 - `path` - Script to show the PATH in a pretty way
 - `sharekeys` - To share the keys you are pressing in the screen
+- `timer` - To show a timer on the screen
 
 # Folders
 
