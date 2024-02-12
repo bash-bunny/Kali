@@ -1,6 +1,6 @@
 # OVERVIEW
 
-Personal configuration for a fresh Kali Linux to make it more useful with vim keybindings for the terminal and nice scripts to search the internet without leaving it
+Personal configuration for a fresh Kali Linux to make it more useful with vim keybindings for the terminal and nice scripts to search the internet without leaving it. It has a DW directory to install some tools to access and investigate the dark web
 
 # Dependencies
 
@@ -165,4 +165,15 @@ cd Kali
 # Give permissions and execute the setup.sh script
 chmod u+x setup.sh && ./setup.sh
 # Enter the password when need it, wait until reboot
+```
+
+**Optional**: Install the DW tools
+
+```bash
+# Change into the Dark Web directory
+cd DW/
+# Give permissions to the setup file
+chmod u+x setup
+# Execute the file
+./setup
 ```
