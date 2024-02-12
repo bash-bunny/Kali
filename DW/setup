@@ -1,21 +1,21 @@
 #!/usr/bin/bash
 
-# Actualizacion completa del sistema
+# Complete update
 sudo apt update && sudo apt upgrade -y
 
-# Instalacion completa de todas las herramientas
+# Install the tools from the official repos
 sudo apt install -y vim tmux neofetch torsocks proxychains \
         nyx gowitness jq shellcheck yt-dlp subfinder httpx-toolkit podman \
         zaproxy keepassxc flameshot chromium i2pd torbrowser-launcher tor \
         golang-go chromium
 
-# Instalacion de herramientas de go
+# Install tools from go
 go install github.com/sensepost/gowitness@latest                                                                                                                             
                                                                                                                                                                              
-# Instalacion de zeronet                                                                                                                                                     
+# Zeronet installation                                                                                                                                                 
 podman pull docker.io/nofish/zeronet
 
-# Instalacion de freenet
+# Freenet installation
 cd /tmp/
 wget 'https://www.draketo.de/dateien/freenet/build01496/new_installer_offline_1496.jar' -O new_installer_offline.jar
 java -jar new_installer_offline.jar
