@@ -68,6 +68,10 @@ sudo apt install tmux
 - `Master+c` - Create a new panel
 - `Master+a` - Go between the last panel and the actual panel
 - `Master+&` - Kill actual panel
+- `Master+j` - Go to the bottom panel
+- `Master+k` - Go to the upper panel
+- `Master+l` - Go to the right panel
+- `Master+h` - Go to the left panel
 - `Master+[` - Visual mode
   - `Space` - In visual mode select text
   - `Enter` - Copy the text selected and exit visual mode
