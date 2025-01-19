@@ -33,7 +33,7 @@ cp aliasrc ~/.config/
 ## Copy wallpaper
 cp AloneTalks.jpg ~/Pictures/wallpapers/
 ## Copy scripts
-cp {sharekeys,lynx,bing,duck,google,vic,ix,urlencode,path,timer} ~/.local/bin/
+cp {sharekeys,lynx,bing,duck,google,vic,ix,urlencode,path,timer,vimcheat} ~/.local/bin/
 ## Give them permissions
 chmod u+x ~/.local/bin/*
 
