@@ -2,11 +2,15 @@
 
 # Setup configuration files for Kali Linux
 
+# Read the users password
+echo -n "Input the password: " 
+read -s password
+
 ## Update the kali
-sudo apt update && sudo apt upgrade -y
+echo "$password" | sudo -S apt update && sudo apt upgrade -y
 
 ## Install all the programs need it
-sudo apt install -y tmux vim lynx screenkey lolcat cowsay figlet htop lf iftop bat
+echo "$password" | sudo -S apt install -y tmux vim lynx screenkey lolcat cowsay figlet htop lf iftop bat
 
 ## Copy basic files for terminal to their location
 cp {.bashrc,.inputrc,.vimrc,.tmux.conf} ~/
@@ -38,7 +42,7 @@ cp {sharekeys,lynx,bing,duck,google,vic,ix,urlencode,path,timer,vimcheat} ~/.loc
 chmod u+x ~/.local/bin/*
 
 # Change shell to bash
-chsh -s /usr/bin/bash
+echo "$password" | chsh -s /usr/bin/bash
 
 # Set wallpaper
 xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorVirtual1/workspace0/last-image -s /home/kali/Pictures/wallpapers/AloneTalks.jpg
