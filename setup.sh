@@ -5,6 +5,7 @@
 # Read the users password
 echo -n "Input the password: " 
 read -s password
+echo ""
 
 ## Update the kali
 echo "$password" | sudo -S apt update && sudo apt upgrade -y
