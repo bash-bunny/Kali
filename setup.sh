@@ -10,7 +10,7 @@ read -s password
 echo "$password" | sudo -S apt update && sudo apt upgrade -y
 
 ## Install all the programs need it
-echo "$password" | sudo -S apt install -y tmux vim lynx screenkey lolcat cowsay figlet htop lf iftop bat
+echo "$password" | sudo -S apt install -y tmux vim lynx screenkey lolcat cowsay figlet htop lf iftop bat zaproxy
 
 ## Copy basic files for terminal to their location
 cp {.bashrc,.inputrc,.vimrc,.tmux.conf} ~/
