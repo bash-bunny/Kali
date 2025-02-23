@@ -1,13 +1,12 @@
 #!/usr/bin/bash
 
-# Complete update
-sudo apt update && sudo apt upgrade -y
+# Read the users password
+echo -n "Input the password: " 
+read -s password
+echo ""
 
-# Install the tools from the official repos
-sudo apt install -y vim tmux neofetch torsocks proxychains4 \
-        nyx gowitness jq shellcheck yt-dlp subfinder httpx-toolkit podman \
-        zaproxy keepassxc flameshot chromium i2pd torbrowser-launcher tor \
-        golang-go chromium torsocks
+## Update the kali
+echo "$password" | sudo -S apt update && sudo apt upgrade -y
 
 # Install tools from go
 go install github.com/sensepost/gowitness@latest                                                                                                                             
@@ -19,3 +18,46 @@ podman pull docker.io/nofish/zeronet
 cd /tmp/
 wget 'https://www.draketo.de/dateien/freenet/build01496/new_installer_offline_1496.jar' -O new_installer_offline.jar
 java -jar new_installer_offline.jar
+
+# Install Tools for DarkWeb
+
+# Create Dark Web Tools Directory
+dwDir="Tools/DarkWeb"
+cd
+mkdir -p "$dwDir"
+cd "$dwDir"
+
+## Official Repos
+## Install nyx to monitor TOR
+echo "$password" | sudo -S apt install nyx
+
+## Megadose Onionsearch
+## https://github.com/megadose/OnionSearch
+pipx install onionsearch
+
+## Darkdump
+## https://github.com/josh0xA/darkdump
+git clone https://github.com/josh0xA/darkdump && cd darkdump
+python -m venv venv && . venv/bin/activate
+### Fix missing dependency
+echo "pysocks" >> requirements.txt
+pip3 install -r requirements.txt
+deactivate
+cd "$dwDir"
+
+## Onioff
+## https://github.com/k4m4/onioff
+git clone https://github.com/k4m4/onioff.git && cd onioff
+python -m venv venv && . venv/bin/activate
+pip3 install -r requirements.txt
+deactivate
+cd "$dwDir"
+
+## TorCrawl
+## https://github.com/MikeMeliz/TorCrawl.py
+git clone https://github.com/MikeMeliz/TorCrawl.py.git
+cd TorCrawl.py
+python -m venv venv && . venv/bin/activate
+pip install -r requirements.txt
+deactivate
+cd "$dwDir"
