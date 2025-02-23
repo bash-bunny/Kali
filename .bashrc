@@ -42,15 +42,21 @@ PROMPT_AT=@
 
 # Prompt
 __ps1() {
-	local P='$' dir="${PWD##*/}" B countme short long double \
-	r='\[\e[31m\]' g='\[\e[32m\]' h='\[\e[34m\]' \
-	u='\[\e[33m\]' p='\[\e[34m\]' w='\[\e[35m\]' \
-	b='\[\e[36m\]' x='\[\e[0m\]'
+	local P='>' dir="${PWD##*/}" B countme short long double \
+	r='\[\e[31m\]' g='\[\e[35m\]' h='\[\e[34m\]' \
+	u='\[\e[33m\]' p='\[\e[34m\]' w='\[\e[32m\]' \
+	b='\[\e[36m\]' x='\[\e[0m\]' l='\[\e[37m\]'
 
 	[[ $EUID == 0 ]] && P='#' && u=$r && p=$u # root
 	[[ $PWD = / ]] && dir=/
 	[[ $PWD = "$HOME" ]] && dir='~'
 
+  if test -z "$VIRTUAL_ENV" ; then
+      PYTHON_VIRTUALENV=""
+  else
+      PYTHON_VIRTUALENV="${l}(`basename \"$VIRTUAL_ENV\"`)${x} "
+  fi
+	
 	B=$(git branch --show-current 2>/dev/null)
 	[[ $dir = "$B" ]] && B=.
 	countme="$USER$PROMPT_AT$(hostname):$dir($B)\$ "
@@ -58,9 +64,9 @@ __ps1() {
 	[[ $B == master || $B == main ]] && b="$r"
 	[[ -n "$B" ]] && B="$g($b$B$g)"
 
-	short="$u\u$g$PROMPT_AT$h\h$g:$w$dir$B$p$P$x "
-	long="$g╔ $u\u$g$PROMPT_AT$h\h$g:$w$dir$B\n$g╚ $p$P$x "
-	double="$g╔ $u\u$g$PROMPT_AT$h\h$g:$w$dir\n$g║ $B\n$g╚ $p$P$x "
+	short="${PYTHON_VIRTUALENV}$u\u$g$PROMPT_AT$h\h$g:$w$dir$B$p$P$x "
+	long="$g╔ ${PYTHON_VIRTUALENV}$u\u$g$PROMPT_AT$h\h$g:$w$dir$B\n$g╚ $p$P$x "
+	double="$g╔ ${PYTHON_VIRTUALENV}$u\u$g$PROMPT_AT$h\h$g:$w$dir\n$g║ $B\n$g╚ $p$P$x "
 
 	if ((${#countme} > PROMPT_MAX)); then
 		PS1="$double"
@@ -72,6 +78,44 @@ __ps1() {
 }
 
 PROMPT_COMMAND="__ps1"
+
+# Env vars
+export EDITOR="vim"
+export TERMINAL="st"
+export BROWSER="qutebrowser"
+export READER="zathura"
+export FILE="ranger"
+export SUDO_ASKPASS="/home/tuxy/.local/bin/dmenupass"
+export GITUSER="bash-bunny"
+export REPOS="$HOME/Repos"
+source $HOME/.gf/gf-completion.bash
+## CDPATH
+export CDPATH=".:$HOME:$HOME/scripts:$HOME/Documents/"
+
+# Pomodoro from https://github.com/rwxrob/pomo
+complete -C pomo pomo
+
+# Functions
+clone ()
+{
+	local repo="$1" user;
+	local repo="${repo#https://github.com/}";
+	local repo="${repo#git@github.com:}";
+	if [[ $repo =~ / ]]; then
+		user="${repo%%/*}"
+	else
+		user="$GITUSER"
+	fi
+	local name="${repo##*/}"
+	local userd="$REPOS/github.com/$user"
+	local path="$userd/$name"
+	[[ -d "$path" ]] && cd "$path" && return
+	mkdir -p "$userd"
+	cd "$userd"
+	echo gh repo clone "$user/$name" -- --recurse-submodule
+	gh repo clone "$user/$name" -- --recurse-submodule
+	cd "$name"
+} && export -f clone
 
 # Load files
 ## Load aliases
@@ -87,4 +131,24 @@ fi
 GOPATH="$HOME/go"
 if ! [[ $PATH =~ "$GOPATH" ]]; then
 	export PATH="$PATH:$GOPATH/bin"
+fi
+## screenlayout
+screenlayout="$HOME/.screenlayout"
+if ! [[ $PATH =~ "$screenlayout" ]]; then
+	export PATH="$PATH:$screenlayout"
+fi
+## Rust packages
+rustpath="/root/.cargo/bin"
+if ! [[ $PATH =~ "$rustpath" ]]; then
+	export PATH="$PATH:$rustpath"
+fi
+## User Rust packages
+urustpath="~/.cargo/bin"
+if ! [[ $PATH =~ "$urustpath" ]]; then
+	export PATH="$PATH:$urustpath"
+fi
+## Home bin (for ruby packages)
+homebin="~/bin"
+if ! [[ $PATH =~ "$homebin" ]]; then
+	export PATH="$PATH:$homebin"
 fi
