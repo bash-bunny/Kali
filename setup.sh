@@ -11,7 +11,10 @@ echo ""
 echo "$password" | sudo -S apt update && sudo apt upgrade -y
 
 ## Install all the programs need it
-echo "$password" | sudo -S apt install -y tmux vim lynx screenkey lolcat cowsay figlet htop lf iftop bat zaproxy
+echo "$password" | sudo -S apt install -y tmux vim lynx screenkey lolcat cowsay figlet htop lf iftop bat zaproxy fastfetch torsocks proxychains4 \
+        nyx gowitness jq shellcheck yt-dlp subfinder httpx-toolkit podman \
+        zaproxy keepassxc flameshot chromium i2pd torbrowser-launcher tor \
+        golang-go chromium torsocks
 
 ## Copy basic files for terminal to their location
 cp {.bashrc,.inputrc,.vimrc,.tmux.conf} ~/
